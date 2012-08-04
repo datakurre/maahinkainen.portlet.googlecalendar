@@ -14,7 +14,7 @@
   <div class="row">
     <div tal:attributes="class string:cell ${main_cell}">
       <h1 class="documentFirstHeading"
-          tal:content="view/event/get_title|nothing">Title</h1>
+          tal:content="view/get_title|nothing">Title</h1>
         <div class="documentDescription" tal:condition="view/event/get_description|nothing"
              tal:content="structure view/get_description">Description</div>
     </div>
@@ -25,7 +25,7 @@
           <tbody>
             <tr>
               <th i18n:translate="event_what">What</th>
-              <td tal:content="view/event/get_title">What</td>
+              <td tal:content="view/get_title">What</td>
             </tr>
             <tr>
               <th i18n:translate="event_when">When</th>
