@@ -4,7 +4,7 @@ version = "1.0.0"
 
 setup(name="maahinkainen.portlet.googlecalendar",
     version=version,
-    description="Simple Google Calendar events portlet.",
+    description="Simple Google Calendar events portlet",
     long_description=open("README.txt").read() + "\n" +
                      open("HISTORY.txt").read(),
     # Get more strings from
