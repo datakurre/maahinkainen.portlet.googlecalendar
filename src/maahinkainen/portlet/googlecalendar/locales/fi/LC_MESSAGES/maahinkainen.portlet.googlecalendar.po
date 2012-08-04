@@ -1,26 +1,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2011-03-11 18:47+0000\n"
+"POT-Creation-Date: 2012-08-04 14:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0\n"
-"Language-Code: en\n"
-"Language-Name: English\n"
-"Preferred-Encodings: utf-8 latin1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language-Code: fi\n"
+"Language-Name: Suomeksi\n"
+"Preferred-Encodings: latin9 utf-8\n"
 "Domain: DOMAIN\n"
 
 #: maahinkainen/portlet/googlecalendar/portlet.py:94
 msgid "A portlet showing the next events on a Google Calendar."
-msgstr ""
+msgstr "Sovelma, joka näyttää tulevia tapahtumia halutusta Google-kalenterista."
 
 #: maahinkainen/portlet/googlecalendar/portlet.py:43
 msgid "Custom Title"
-msgstr ""
+msgstr "Oma otsikko"
 
 #: maahinkainen/portlet/googlecalendar/portlet.py:44
 msgid "Enter a custom title for your upcoming events listing."
