@@ -1,19 +1,4 @@
 syntax: glob
 
-parts
-dist
-build
-bin
-var
-src
-develop-eggs
-fake-eggs
-*.egg-info
 *.pyc
-*.mo
-*~
-.mr.developer.cfg
-.installed.cfg
-.project
-.pydevproject
-.DS_Store
+*.egg-info
