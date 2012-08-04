@@ -18,10 +18,10 @@ EVENTS = {}
 
 class GoogleCalendarTool(object):
     implements(IGoogleCalendarTool)
- 
+
     def __init__(self, calendar_id):
         self.calendar_id = calendar_id
-    
+
     @property
     @ram.cache(lambda m, self: time() // 3600)  # cache for an hour
     def events(self):

@@ -7,10 +7,14 @@
       i18n:domain="plone">
 <body>
 
+<metal:head fill-slot="head_slot">
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+</metal:head>
+
 <metal:main fill-slot="main"
             tal:define="ajax_load request/ajax_load | nothing;
-                        main_cell python:ajax_load and 'width-14 position-0' or 'width-10 position-0';
-                        detail_cell python:ajax_load and 'width-8 position-14' or 'width-6 position-10'">
+                        main_cell python:ajax_load and 'width-10 position-0' or 'width-9 position-0';
+                        detail_cell python:ajax_load and 'width-6 position-10' or 'width-7 position-9'">
   <div class="row">
     <div tal:attributes="class string:cell ${main_cell}">
       <h1 class="documentFirstHeading"

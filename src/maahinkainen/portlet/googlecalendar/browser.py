@@ -3,6 +3,8 @@
 
 import re
 
+from Acquisition import aq_parent
+
 from zope.interface import implements
 from zope.publisher.interfaces import IPublishTraverse, NotFound
 
@@ -22,9 +24,16 @@ class Month(BrowserView):
     implements(IPublishTraverse)
 
     def __init__(self, context, request):
+        if isinstance(context, Month) or isinstance(context, Event):
+            context = aq_parent(context)
         super(Month, self).__init__(context, request)
         self.calendar_id = None
         self.timezone = self.request.get("ctz", "Europe/Helsinki")
+
+        # Disable portlets on ajax_load
+        if "ajax_load" in self.request:
+            self.request["disable_plone.leftcolumn"] = True
+            self.request["disable_plone.rightcolumn"] = True
 
     def publishTraverse(self, request, name):
         if not self.calendar_id and name in EVENTS:  # ../@@calendar-month/calendar_id
@@ -41,10 +50,17 @@ class Event(BrowserView):
     implements(IPublishTraverse)
 
     def __init__(self, context, request):
+        if isinstance(context, Month) or isinstance(context, Event):
+            context = aq_parent(context)
         super(Event, self).__init__(context, request)
         self.calendar = {}
         self.timezone = self.request.get("ctz", "Europe/Helsinki")
         self.event = None
+
+        # Disable portlets on ajax_load
+        if "ajax_load" in self.request:
+            self.request["disable_plone.leftcolumn"] = True
+            self.request["disable_plone.rightcolumn"] = True
 
     def get_title(self):
         return unicode(self.event.get_title(), "utf-8")

@@ -62,7 +62,7 @@
                     <tal:location content="obj/get_where">Location</tal:location>
                 </span>
             </span>
-        </a>    
+        </a>
     </dd>
     </tal:events>
 
