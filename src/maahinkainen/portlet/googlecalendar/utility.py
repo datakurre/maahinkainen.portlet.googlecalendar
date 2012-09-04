@@ -23,7 +23,7 @@ class GoogleCalendarTool(object):
         self.calendar_id = calendar_id
 
     @property
-    @ram.cache(lambda m, self: time() // 3600)  # cache for an hour
+    @ram.cache(lambda m, self: (time() // 3600, self.calendar_id))  # cache for an hour
     def events(self):
         cs = service.CalendarService()
         params = ("?orderby=starttime"
@@ -35,6 +35,6 @@ class GoogleCalendarTool(object):
         events = [CalendarEvent(e) for e in feed.entry]
         if events:
             # FIXME: This is not a nice way to save viewable
-            # events, but it's better than nothing... and easy :)
+            # events, but it's better than nothing...
             EVENTS[self.calendar_id] = events
         return events
