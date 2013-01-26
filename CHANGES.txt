@@ -1,0 +1,9 @@
+Changelog
+=========
+
+1.0.0 (unreleased)
+------------------
+
+- Fixed cachekey to include calendar_id.
+- Fixed event-view layout and traversing.
+- Fixed unicode-issues with displaying event title or description.
