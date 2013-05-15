@@ -31,8 +31,11 @@ class GoogleCalendarTool(object):
                   "&singleevents=true"
                   "&start-min=%s" % datetime.now().strftime("%Y-%m-%d"))
         uri = "/calendar/feeds/%s/public/full%s" % (self.calendar_id, params)
-        feed = cs.GetCalendarEventFeed(uri)
-        events = [CalendarEvent(e) for e in feed.entry]
+        try:
+            feed = cs.GetCalendarEventFeed(uri)
+            events = [CalendarEvent(e) for e in feed.entry]
+        except:
+            events = []
         if events:
             # FIXME: This is not a nice way to save viewable
             # events, but it's better than nothing...
