@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="maahinkainen.portlet.googlecalendar",
-    version="1.0.0",
+    version="1.0.1",
     description="Simple Google Calendar events portlet",
     long_description=(open("README.txt").read() + "\n" +
                       open("CHANGES.txt").read()),
